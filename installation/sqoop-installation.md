@@ -3,7 +3,8 @@ Sqoop Installation on Dataproc cluster
 
 ### Download Sqoop
 
-We can download the latest version of Sqoop from here: Download sqoop. For this Sqoop Installation tutorial, we are using version 1.4.7, that is, sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz
+For this Sqoop Installation tutorial, we are using version 1.4.7, that is, sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz
+For other versions of Sqoop you can follow this [link](http://archive.apache.org/dist/sqoop/1.4.5/)
 
 In the terminal do wget to download the sqoop package.
 
@@ -11,7 +12,7 @@ In the terminal do wget to download the sqoop package.
 wget http://apachemirror.wuchna.com/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz
 ```
 
-Extract the Sqoop tarball and move it to the “/usr/lib/” directory we use the following command.
+Extract the Sqoop tarball and move it to the “/usr/lib/” directory.
 
 ```bash
 tar -xvf sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz
@@ -19,9 +20,9 @@ sudo mv sqoop-1.4.7.bin__hadoop-2.6.0 sqoop
 sudo mv sqoop /usr/lib/
 ``` 
 
-### Configuring bashrc
+### Configuring profile
 
-Use vi command to append the following lines to ~/.profile file
+Use *vi* command to append the following lines to *~/.profile* file.
 
 ```bash
 #Sqoop
@@ -29,8 +30,9 @@ export SQOOP_HOME=/usr/lib/sqoop
 export PATH=$PATH:$SQOOP_HOME/bin
 ```
 
-Now, save the above file by executing this command “:wq!” ~/.profile file we use the following command.
+Now, save and close the above file by executing *“:wq!”* command.
 
+Execute below command to reload enviroment variables.
 ```bash
 source ~/.profile
 ```
@@ -38,7 +40,7 @@ source ~/.profile
 ### Configuring Sqoop
 
 While, we need to edit the sqoop-env.sh file, that is placed in the $SQOOP_HOME/conf directory, in order to configure Sqoop with Hadoop. 
-Now, using the following command redirect to Sqoop config directory and copy the template file 
+Now, using the following command redirect to Sqoop config directory and copy the template file. 
 
 ```bash
 cd /usr/lib/sqoop/conf
@@ -52,7 +54,7 @@ export HADOOP_COMMON_HOME=/usr/lib/hadoop
 export HADOOP_MAPRED_HOME=/usr/lib/hadoop-mapreduce
 ```
 
-Now, save the above file by executing this command “:wq!”.
+Now, save the above file by executing *“:wq!”* command.
 
 Copy hive-site.xml file into sqoop conf
 
@@ -62,7 +64,7 @@ sudo cp /usr/lib/hive/conf/hive-site.xml /usr/lib/sqoop/conf
 
 ### Configure MySQL-connector-java
 
-You will find mysql-connector in /usr/share/java/
+You will find mysql-connector file in /usr/share/java/
 
 You need to set softlink of MySQL-connector in $SQOOP_HOME/lib
 
@@ -72,7 +74,7 @@ sudo ln -s /usr/share/java/mysql-connector-java-5.1.42.jar /usr/lib/sqoop/lib
 
 ### Verifying Sqoop
 
-At last, verify the Sqoop version we use the following command.
+For verifying the Sqoop version we use the following command.
 
 ```bash
 cd /usr/lib/sqoop/
