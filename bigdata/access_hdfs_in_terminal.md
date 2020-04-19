@@ -1,8 +1,7 @@
-Acess HDFS uisng Terminal
+Access HDFS uisng Terminal
 =================
 
-| Data        	| data/ratings.txt|
-|				| data/movies.txt |
+|	Data		| data/movies.txt, data/ratings.txt |
 | ------------- |:---------------:|
 
 In this exercise, we will simply explore the HDFS file system using terminal.
@@ -13,11 +12,11 @@ Start by creating a new top-level directory for exercises. You will use this dir
 hdfs dfs -mkdir data
 ```
 Change directories to the local filesystem directory containing the sample data we will be using in the course.
-
+```bash
 cd ~/data
 ls
-	
-#### Insert this directory into HDFS:
+```	
+#### Insert this file into HDFS:
 ```bash
 hdfs dfs -put ratings.txt data/
 ```
