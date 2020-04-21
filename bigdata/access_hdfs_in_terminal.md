@@ -1,4 +1,4 @@
-Access HDFS uisng Terminal
+Access HDFS using Terminal
 =================
 
 |	Data		| data/movies.txt, data/ratings.txt |
@@ -7,11 +7,11 @@ Access HDFS uisng Terminal
 In this exercise, we will simply explore the HDFS file system using terminal.
 
 #### Uploading to HDFS
-Start by creating a new top-level directory for exercises. You will use this directory throughout the rest of the course.
+Start by creating a new top-level directory in HDFS for data.. You will use this directory throughout the rest of the course.
 ```bash
 hdfs dfs -mkdir data
 ```
-Change directories to the local filesystem directory containing the sample data we will be using in the course.
+Change directory to the local filesystem directory containing the sample data.
 ```bash
 cd ~/data
 ls
@@ -27,11 +27,8 @@ This copies the local ratings.txt file into a remote HDFS directory data/ . Noti
 ```bash
 hdfs dfs -ls data/
 ```
-You should see the ratings.txt file in the local directory.
+You should see the ratings.txt file in the local directory (if you have done git clone).
 
-*NOTE:* In HDFS, relative (non-absolute) paths are considered 
-relative to your home directory. There is no concept of a “current” or 
-“working” directory as there is in Linux and similar file systems.
 
 #### Practice uploading a directory, confirm the upload, and then remove it, as it is not actually needed for the exercises.
 ```bash
@@ -61,12 +58,13 @@ less ~/ratings.txt
 Enter the letter [q] to quit the less command after reviewing the downloaded
 file.
 
-There are several other operations available with the hdfs dfs command to perform 
+There are several other operations available with the *hdfs dfs* command to perform 
 most common filesystem manipulations such as mv, cp, and mkdir. In the terminal window, enter:
 
 ```bash
 hdfs dfs
 ```
 
-You see a help message describing all the file system commands provided by
+You will 
+see a help message describing all the file system commands provided by
 HDFS. Try playing around with a few of these commands if you like.
