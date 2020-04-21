@@ -57,9 +57,9 @@ val df = customers.join(orders, $"customer_id" === $"order_id").drop("order_id")
 val customer_order = df.where("order_customer_id >= 1000").select($"order_customer_id",$"customer_fname",$"customer_lname",$"customer_city", $"customer_state",$"order_status").show()
 ```
 
-+-----------------+--------------+--------------+-------------+--------------+---------------+
+
 |order_customer_id|customer_fname|customer_lname|customer_city|customer_state|   order_status|
-+-----------------+--------------+--------------+-------------+--------------+---------------+
+|-----------------|--------------|--------------|-------------|--------------|---------------|
 |            11599|       Richard|     Hernandez|  Brownsville|            TX|         CLOSED|
 |            12111|           Ann|         Smith|       Caguas|            PR|       COMPLETE|
 |             8827|          Mary|         Jones|   San Marcos|            CA|         CLOSED|
@@ -80,7 +80,6 @@ val customer_order = df.where("order_customer_id >= 1000").select($"order_custom
 |             9198|          Mary|         Ellis|West New York|            NJ|     PROCESSING|
 |             2711|       William|     Zimmerman|       Caguas|            PR|        PENDING|
 |             4367|      Benjamin|        Duarte|     San Juan|            PR|PENDING_PAYMENT|
-+-----------------+--------------+--------------+-------------+--------------+---------------+
 
 #### Use partitionBy("customer_city") 
 ```bash
