@@ -6,6 +6,12 @@ Access HDFS uisng Terminal
 
 In this exercise, we will simply explore the HDFS file system using terminal.
 
+#### Create user in HDFS
+``bash
+hdfs dfs -mkdir /user/$USER
+hdfs dfs -chown -R $USER /user/$USER
+```
+
 #### Uploading to HDFS
 Start by creating a new top-level directory for exercises. You will use this directory throughout the rest of the course.
 ```bash
