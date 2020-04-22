@@ -7,7 +7,7 @@ Access HDFS using Terminal
 In this exercise, we will simply explore the HDFS file system using terminal.
 
 #### Create user in HDFS
-``bash
+```bash
 hdfs dfs -mkdir /user/$USER
 hdfs dfs -chown -R $USER /user/$USER
 ```
