@@ -43,7 +43,7 @@ Reference: https://blog.cloudera.com/blog/2014/05/apache-spark-resource-manageme
 
 #### Open terminal go to /usr/lib/spark/examples/jars directory.
 ```bash
-cd /usr/hdp/<VERSION NUMBER>/spark2/examples/jars
+cd /usr/lib/spark/examples/jars
 ```
 
 #### Import sherlock.txt data into HDFS
