@@ -206,7 +206,7 @@ sudo vi /usr/lib/sqoop/conf/hive-site.xml
  
 Now execute the following command 
 ```bash
-./bin/sqoop import --connect jdbc:mysql://localhost:3306/demo --username root --password password --table test --target-dir test --hive-import --create-hive-table --hive-table default.test -m 1
+./bin/sqoop import --connect jdbc:mysql://localhost:3306/demo --username root --password password --table test --target-dir test --hive-import --create-hive-table --hive-table default.test 
 ```
  
 Then Verify the table in hive uisng below command
