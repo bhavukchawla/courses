@@ -83,7 +83,7 @@ val customer_order = df.where("order_status = 'PENDING_PAYMENT'").select($"order
 
 #### Use partitionBy("customer_city") 
 ```bash
-customers.write.partitionBy("customer_city").format("parquet").saveAsTable("customer_order")
+customer_order.write.partitionBy("customer_city").format("parquet").saveAsTable("customer_order")
 ```
 
 #### Verify partition table hive 
