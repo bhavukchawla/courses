@@ -28,14 +28,14 @@ mysql> show databases;
 ./bin/sqoop import -Dmapreduce.job.classloader=true --connect jdbc:mysql://localhost/retail_db \
 --username root --password password --table orders \
 --as-avrodatafile --outdir schema \
---target-dir data/orders -m 1
+--target-dir data/orders 
 ```
 #### Sqoop Import customers table from MySql to HDFS in AVRO format
 ```bash
 ./bin/sqoop import -Dmapreduce.job.classloader=true --connect jdbc:mysql://localhost/retail_db \
 --username root --password password --table customers \
 --as-avrodatafile --outdir schema \
---target-dir data/customers -m 1
+--target-dir data/customers 
 ```
 #### Open spark-shell and pass --packages com.databricks:spark-avro_2.11:4.0.0
 ```bash
@@ -52,9 +52,9 @@ customers.show(10)
 val orders= spark.read.format("com.databricks.spark.avro").option("header","true").load("data/orders/part-m-00000.avro")
 orders.show(10)
 
-val df = customers.join(orders, $"customer_id" === $"order_id").drop("order_id")
+val df = customers.join(orders, $"customer_id" === $"order_customer_id").drop("order_id")
 
-val customer_order = df.where("order_customer_id >= 1000").select($"order_customer_id",$"customer_fname",$"customer_lname",$"customer_city", $"customer_state",$"order_status").show()
+val customer_order = df.where("order_status = 'PENDING_PAYMENT'").select($"order_customer_id",$"customer_fname",$"customer_lname",$"customer_city", $"customer_state",$"order_status").show()
 ```
 
 
