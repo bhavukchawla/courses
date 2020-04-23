@@ -167,7 +167,7 @@ INSERT INTO test (id) VALUES (7);
 ```bash
 cd /usr/lib/sqoop
 
-./bin/sqoop import --connect "jdbc:mysql://localhost/demo" --username root --password password --table test --target-dir="mydata" -m 1
+./bin/sqoop import --connect "jdbc:mysql://localhost/demo" --username root --password password --table test --target-dir="mydata" 
 ``` 
 
 Verify the Output in HDFS
