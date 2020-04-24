@@ -77,4 +77,5 @@ systemctl status confluent*
 java.io.IOException: Unable to create data directory /var/lib/zookeeper
 ```bash
 sudo chmod -R 777 /var/lib/zookeeper
+sudo systemctl restart confluent*
 ```
