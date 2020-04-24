@@ -40,27 +40,27 @@ Please note that Table name and Column Family name are mandatory and rest everyt
 
 #### HBase list - Lists all the tables in HBase.
 ```bash
-list
+hbase(main):007:0> list
 ```
 
 #### Describe table
 ```bash                 
-hbase(main):026:0> describe 'user'
+hbase(main):008:0> describe 'user'
 ```
 
 #### HBase put - Puts a cell value at a specified column in a specified row in a particular table.
 ```bash
-hbase(main):017:0> put 'user', 'user1', 'profile:fname', 'Tom'
-hbase(main):018:0> put 'user', 'user1', 'profile:lname', 'Mathew'
+hbase(main):009:0> put 'user', 'user1', 'profile:fname', 'Tom'
+hbase(main):010:0> put 'user', 'user1', 'profile:lname', 'Mathew'
 ```
 
 #### HBase get - Fetches the contents of row or a cell.
 ```bash
-hbase(main):019:0> get 'user', 'user1', {COLUMN => 'profile:fname'}
+hbase(main):011:0> get 'user', 'user1', {COLUMN => 'profile:fname'}
 ```
 
 #### scan - Scans and returns the table data.
 ```bash
-hbase(main):033:0> scan 'user'
+hbase(main):012:0> scan 'user'
 ```
 
