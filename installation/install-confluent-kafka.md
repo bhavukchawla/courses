@@ -11,7 +11,7 @@ sudo apt-get update && sudo apt-get install confluent-platform-2.12
 
 ### Give 777 permission to /var/lib/zookeeper 
 ```bash
-sudo chmod -R 775 /var/lib/zookeeper
+sudo chmod -R 777 /var/lib/zookeeper
 ```
 #### Start Kafka
 Let’s start the Kafka Services:
