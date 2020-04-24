@@ -1,10 +1,10 @@
-Getting started with HBase
+Getting started with HBase on Google Dataproc
 =============================
 
-#### To invoke Hbase shell
-
+#### To invoke Hbase shell through Terminal
+```bash
 hbase shell
-
+```
 #### HBase Version - Provides the version of HBase being used.
 ```bash
 hbase(main):001:0> version
