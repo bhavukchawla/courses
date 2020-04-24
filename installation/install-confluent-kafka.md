@@ -9,11 +9,7 @@ sudo apt-get update && sudo apt-get install confluent-platform-2.12
 ```
 
 #### Configure Kafka
-Let’s configure Kafka for a minimum install with 1 Kafka Broker, 1 Topic.
-
-Navigate to your Kafka installation
-
-Kafka Broker
+Let’s configure Kafka for One Kafka Broker and One Topic.
 
 Edit the file server.properties
 ```bash
