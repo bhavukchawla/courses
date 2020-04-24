@@ -9,7 +9,7 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.confluent.io/deb/5.2 
 sudo apt-get update && sudo apt-get install confluent-platform-2.12
 ```
 
-### Give 775 permission to /var/lib/zookeeper 
+### Give 777 permission to /var/lib/zookeeper 
 ```bash
 sudo chmod -R 775 /var/lib/zookeeper
 ```
