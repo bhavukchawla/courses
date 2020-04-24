@@ -24,12 +24,8 @@ Type a message and press enter:
 ```bash
 kafka-console-consumer --bootstrap-server localhost:9092 --topic datacouch --from-beginning
 ```
-Confirm that the previously posted message has been consumed.
 
-#### Remove the consumer offset registrations.
-```bash
-kafka-consumer-groups --delete --zookeeper localhost:2181 --topic datacouch
-```
+
 #### Remove the topic
 ```bash
 kafka-topics --delete --zookeeper localhost:2181 --topic datacouch
