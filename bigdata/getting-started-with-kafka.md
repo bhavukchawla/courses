@@ -15,13 +15,10 @@ kafka-topics --list --zookeeper localhost:2181
 ```bash
 kafka-console-producer --broker-list localhost:9092 --topic datacouch
 ```
-Press enter. No feedback appears; the cursor sits blinking and waiting for your input.
-
 Type a message and press enter:
 	Hello World!
 
 #### Consume a message
-Open another terminal:
 ```bash
 kafka-console-consumer --bootstrap-server localhost:9092 --topic datacouch --from-beginning
 ```
