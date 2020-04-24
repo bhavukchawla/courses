@@ -1,11 +1,11 @@
-Getting started with Kafka
+Getting started with Confluent Kafka
 ============================
 
 #### Create a topic: 
 ```bash
 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
 ```
-####Confirm the topic is created:
+#### Confirm the topic is created:
 ```bash
 kafka-topics --list --zookeeper localhost:2181
 ```
