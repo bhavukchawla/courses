@@ -27,15 +27,15 @@ mysql> show databases;
 ```bash
 ./bin/sqoop import -Dmapreduce.job.classloader=true --connect jdbc:mysql://localhost/retail_db \
 --username root --password password --table orders \
---as-avrodatafile --outdir schema \
---target-dir data/orders -m 1
+--as-avrodatafile \
+--target-dir data/orders 
 ```
 #### Sqoop Import customers table from MySql to HDFS in AVRO format
 ```bash
 ./bin/sqoop import -Dmapreduce.job.classloader=true --connect jdbc:mysql://localhost/retail_db \
 --username root --password password --table customers \
---as-avrodatafile --outdir schema \
---target-dir data/customers -m 1
+--as-avrodatafile \
+--target-dir data/customers 
 ```
 #### Open spark-shell and pass --packages com.databricks:spark-avro_2.11:4.0.0
 ```bash
@@ -52,43 +52,21 @@ customers.show(10)
 val orders= spark.read.format("com.databricks.spark.avro").option("header","true").load("data/orders/part-m-00000.avro")
 orders.show(10)
 
-val df = customers.join(orders, $"customer_id" === $"order_id").drop("order_id")
+val df = customers.join(orders, $"customer_id" === $"order_customer_id").drop("order_id")
 
-val customer_order = df.where("order_customer_id >= 1000").select($"order_customer_id",$"customer_fname",$"customer_lname",$"customer_city", $"customer_state",$"order_status").show()
+val customer_order = df.where("order_status = 'PENDING_PAYMENT'").select($"order_customer_id",$"customer_fname",$"customer_lname",$"customer_city", $"customer_state",$"order_status")
+
+customer_order.show()
 ```
-
-
-|order_customer_id|customer_fname|customer_lname|customer_city|customer_state|   order_status|
-|-----------------|--------------|--------------|-------------|--------------|---------------|
-|            11599|       Richard|     Hernandez|  Brownsville|            TX|         CLOSED|
-|            12111|           Ann|         Smith|       Caguas|            PR|       COMPLETE|
-|             8827|          Mary|         Jones|   San Marcos|            CA|         CLOSED|
-|            11318|        Robert|        Hudson|       Caguas|            PR|       COMPLETE|
-|             7130|          Mary|         Smith|      Passaic|            NJ|       COMPLETE|
-|             4530|       Melissa|        Wilcox|       Caguas|            PR|       COMPLETE|
-|             2911|         Megan|         Smith|     Lawrence|            MA|     PROCESSING|
-|             5657|          Mary|         Perez|       Caguas|            PR|PENDING_PAYMENT|
-|             5648|       Melissa|         Smith|     Stafford|            VA|PENDING_PAYMENT|
-|             1837|   Christopher|         Smith|  San Antonio|            TX|         CLOSED|
-|             9149|          Mary|       Baldwin|       Caguas|            PR|PENDING_PAYMENT|
-|             9842|     Katherine|         Smith|  Pico Rivera|            CA|     PROCESSING|
-|             2568|          Jane|          Luna|      Fontana|            CA|       COMPLETE|
-|             7276|       Tiffany|         Smith|       Caguas|            PR|PENDING_PAYMENT|
-|             2667|          Mary|      Robinson|       Taylor|            MI|       COMPLETE|
-|             1205|        Robert|         Smith|     Martinez|            CA|         CLOSED|
-|             9488|     Stephanie|      Mitchell|       Caguas|            PR|PENDING_PAYMENT|
-|             9198|          Mary|         Ellis|West New York|            NJ|     PROCESSING|
-|             2711|       William|     Zimmerman|       Caguas|            PR|        PENDING|
-|             4367|      Benjamin|        Duarte|     San Juan|            PR|PENDING_PAYMENT|
 
 #### Use partitionBy("customer_city") 
 ```bash
-customers.write.partitionBy("customer_city").format("parquet").saveAsTable("customer_order")
+customer_order.write.partitionBy("customer_city").format("parquet").saveAsTable("customers_pending_payment")
 ```
 
 #### Verify partition table hive 
 In hive shell
 
 ```bash
-show partition customer_order
+show partition customers_pending_payment
 ```

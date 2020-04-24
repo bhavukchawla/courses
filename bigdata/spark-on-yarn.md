@@ -4,7 +4,7 @@ Spark Jobs Running on YARN
 When running Spark on YARN, each Spark executor runs as a YARN container. Where MapReduce schedules a container and fires up a JVM for each task, 
 Spark hosts multiple tasks within the same container. This approach enables several orders of magnitude faster task startup time.
 
-Spark supports two modes for running on YARN, *“yarn-cluster”* mode and **“yarn-client”** mode. Broadly, **yarn-cluster** mode makes sense for production 
+Spark supports two modes for running on YARN, **“yarn-cluster”** mode and **“yarn-client”** mode. Broadly, **yarn-cluster** mode makes sense for production 
 jobs, while yarn-client mode makes sense for interactive and debugging uses where you want to see your application’s output immediately.
 
 Understanding the difference requires an understanding of YARN’s Application Master concept. In YARN, each application instance has an 
@@ -43,7 +43,7 @@ Reference: https://blog.cloudera.com/blog/2014/05/apache-spark-resource-manageme
 
 #### Open terminal go to /usr/lib/spark/examples/jars directory.
 ```bash
-cd /usr/hdp/<VERSION NUMBER>/spark2/examples/jars
+cd /usr/lib/spark/examples/jars
 ```
 
 #### Import sherlock.txt data into HDFS
