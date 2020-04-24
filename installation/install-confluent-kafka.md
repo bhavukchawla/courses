@@ -73,3 +73,8 @@ sudo systemctl start confluent-control-center
 ```bash
 systemctl status confluent*
 ```
+**Note**: If you face error while starting confluent-zookeeper like 
+java.io.IOException: Unable to create data directory /var/lib/zookeeper
+```bash
+sudo chmod -R 777 /var/lib/zookeeper
+```
