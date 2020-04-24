@@ -1,7 +1,7 @@
-Install Confluent Kafka on Dataproc cluster
+Install Confluent Kafka on Dataproc Cluster
 =============================================
 
-#### Install the Confluent Kafka with the following commands:
+#### Install Confluent Kafka using below commands:
 ```bash
 wget -qO - https://packages.confluent.io/deb/5.2/archive.key | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.confluent.io/deb/5.2 stable main"
