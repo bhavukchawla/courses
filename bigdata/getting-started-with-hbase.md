@@ -1,6 +1,10 @@
 Getting started with HBase on Google Dataproc
 =============================
 
+#### Add HBase in Dataproc Cluster.. specify below step (after replacing region) in Initialization actions 
+gs://goog-dataproc-initialization-actions-${REGION}/hbase/hbase.sh
+
+
 #### To invoke Hbase shell through Terminal
 ```bash
 hbase shell
