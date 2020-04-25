@@ -18,7 +18,7 @@ hdfs dfs -put data/ratings.csv data/
 beeline -u jdbc:hive2://localhost:10000 -n $USER
 ```
 
-#### Create an External Table named “ratings” and insert data into it.
+#### Create an External Table named “ratings” and insert data into it
 
 **Note:** Please replace "{user}" with your current user before executing below commands
 ```bash
@@ -34,7 +34,7 @@ LOCATION '/user/{user}/data/ratings' ;
 LOAD DATA INPATH '/user/{user}/data/ratings.csv' INTO TABLE ratings;
 ```
 
-#### Verify the table has been created.
+#### Verify the table has been created
 ```bash
 show tables ;
 ```
@@ -62,7 +62,7 @@ CREATE TABLE ratings_managed (
 INSERT OVERWRITE TABLE ratings_managed SELECT * FROM ratings;
 ```
 
-#### Verify the table Schema and data.
+#### Verify the table Schema and data
 ```bash
 describe formatted ratings_managed;
 
