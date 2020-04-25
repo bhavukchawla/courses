@@ -3,9 +3,10 @@ Getting started with Hive on Google Dataproc
 
 Files used in this exercise:
 
-Data Files -
-
+#### Data Files -
+```bash
 hdfs dfs  -ls /user/$USER/data/
+```
 
 #### Load data folder into HDFS 
 ```bash
@@ -26,9 +27,9 @@ CREATE EXTERNAL TABLE ratings (
  tstamp string
 )ROW FORMAT  DELIMITED
  FIELDS TERMINATED BY ','
-LOCATION '/user/datacouch21/data/ratings' ;
+LOCATION '/user/{user}/data/ratings' ;
 
-LOAD DATA INPATH '/user/datacouch21/data/ratings.csv' INTO TABLE ratings;
+LOAD DATA INPATH '/user/{user}/data/ratings.csv' INTO TABLE ratings;
 ```
 
 #### Verify the table has been created.
