@@ -13,9 +13,9 @@ hdfs dfs  -ls /user/$USER/data/
 hdfs dfs -put data/ratings.csv data/
 ```
 
-#### Invoke hive shell
+#### Invoke beeline shell
 ```bash
-hive
+beeline -u jdbc:hive2://localhost:10000 -n $USER
 ```
 
 #### Create an External Table named “ratings” and insert data into it.
