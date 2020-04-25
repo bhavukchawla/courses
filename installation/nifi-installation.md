@@ -16,7 +16,7 @@ Apache Nifi-1.11.4 tar file will be downloaded into your system.
 #### Extract the Nifi tarball and move it to the “/usr/lib/” directory.
 ```bash
 tar -xvf nifi-1.11.4-bin.tar.gz 
-sudo mv nifi-1.11.4-bin.tar.gz nifi
+sudo mv nifi-1.11.4-bin nifi
 sudo mv nifi /usr/lib/
 ``` 
 
