@@ -19,6 +19,8 @@ hive
 ```
 
 #### Create an External Table named “ratings” and insert data into it.
+
+**Note:** Please replace "{user}" with your current user before executing below commands
 ```bash
 CREATE EXTERNAL TABLE ratings (
  userid int,
