@@ -16,12 +16,15 @@ sudo chmod -R 777 /var/lib/zookeeper
 #### Start Kafka
 Let’s start the Kafka Services:
 ```bash
-sudo systemctl start confluent-zookeeper
-sudo systemctl start confluent-kafka
+sudo confluent start
 ```
 
 #### You can check service status with this command:
 ```bash
-sudo systemctl status confluent-zookeeper
-sudo systemctl status confluent-kafka
+sudo confluent status
+```
+
+#### You can check the logs with this command:
+```bash
+sudo confluent logs {service name}
 ```
