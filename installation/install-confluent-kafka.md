@@ -16,15 +16,15 @@ sudo chmod -R 777 /var/lib/zookeeper
 #### Start the confluent service
 **Let’s start the confluent Services:**
 ```bash
-sudo confluent start
+confluent start
 ```
 
 #### You can check service status with this command:
 ```bash
-sudo confluent status
+confluent status
 ```
 
 #### You can check the logs with this command:
 ```bash
-sudo confluent logs {service name}
+confluent logs {service name}
 ```
