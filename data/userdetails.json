@@ -1,4 +1,4 @@
-{"id":1,"first_name":"Wayne","last_name":"Bell","email":"wbell0@tumblr.com","gender":"Male","ip_address":"77.152.229.131","city":"Miami","timestamp":"1463468947","race":"Costa Rican"},
+[{"id":1,"first_name":"Wayne","last_name":"Bell","email":"wbell0@tumblr.com","gender":"Male","ip_address":"77.152.229.131","city":"Miami","timestamp":"1463468947","race":"Costa Rican"},
 {"id":2,"first_name":"Anthony","last_name":"Allen","email":"aallen1@state.gov","gender":"Male","ip_address":"62.49.195.170","city":"Xiejia","timestamp":"1447538277","race":"Comanche"},
 {"id":3,"first_name":"Eric","last_name":"Henderson","email":"ehenderson2@theguardian.com","gender":"Male","ip_address":"136.129.71.231","city":"Illintsi","timestamp":"1476462811","race":"Comanche"},
 {"id":4,"first_name":"Jimmy","last_name":"Smith","email":"jsmith3@spiegel.de","gender":"Male","ip_address":"117.176.172.187","city":"Tugusirna","timestamp":"1445804900","race":"Native Hawaiian"},
@@ -998,3 +998,4 @@
 {"id":998,"first_name":"Pamela","last_name":"Anderson","email":"pandersonrp@simplemachines.org","gender":"Female","ip_address":"57.149.7.150","city":"Same","timestamp":"1439344249","race":"Puerto Rican"},
 {"id":999,"first_name":"Fred","last_name":"Brown","email":"fbrownrq@tripadvisor.com","gender":"Male","ip_address":"245.12.151.140","city":"Dayr Mawās","timestamp":"1465399006","race":"Chamorro"},
 {"id":1000,"first_name":"George","last_name":"Sanchez","email":"gsanchezrr@europa.eu","gender":"Male","ip_address":"89.217.164.63","city":"Watuagung","timestamp":"1445431715","race":"Tohono O'Odham"}
+]
