@@ -196,7 +196,7 @@ in /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/java.policy inside grant{ 
 
  
 Now, save the above file by executing this command “:wq!”.
-Change hive.execution.engine to “mr”
+Update hive.execution.engine to “mr”
 ```bash
 sudo vi /usr/lib/sqoop/conf/hive-site.xml
 ```
