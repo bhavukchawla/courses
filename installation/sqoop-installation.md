@@ -1,6 +1,9 @@
 Sqoop Installation on Dataproc cluster
 =================
 
+### Prerequisite
+ * HDFS home directory should be setup before Sqoop installation [Access HDFS in Terminal] (../bigdata/access_hdfs_in_terminal.md)
+
 ### Download Sqoop
 
 For this Sqoop Installation tutorial, we are using version 1.4.7, that is, sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz
