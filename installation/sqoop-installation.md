@@ -170,7 +170,7 @@ INSERT INTO test (id) VALUES (7);
 ```bash
 cd /usr/lib/sqoop
 
-sqoop import --connect "jdbc:mysql://localhost/demo" --username root --password password --table test --target-dir="mydata" 
+sqoop import --connect "jdbc:mysql://localhost/demo" --username root --password password --table test --target-dir mydata 
 ``` 
 
 Verify the Output in HDFS
@@ -185,7 +185,7 @@ hdfs dfs -cat mydata/part*
 sqoop import --connect jdbc:mysql://localhost:3306/demo --username root --password password \
 --table test --target-dir test --hive-import \
 --create-hive-table --hive-table \
-default.test -m 1
+default.test 
 ``` 
 
 *Note:* If you face this error
